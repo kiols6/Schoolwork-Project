@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include"conio.h"
+
+//求出1900年到2020年之间所有的闰年
+
+int main()
+{
+	int a = 1900, b = 2020, sum = 0;
+	for (int i = a; i <= b; i++)  //i++表示每次循环后i+1
+	{
+
+		if (i % 4 == 0 && i % 100 != 0) //&&表示“且”，逗号表示“或”
+		{
+			printf("%d  是闰年\n", i);
+			sum++;
+		}
+		if (i % 400 == 0)
+		{
+			printf("%d  是闰年\n", i);
+			sum++;
+		}
+
+	}
+	printf("在1900到2020年之间，总共有%d个闰年", sum);
+		_getch();
+	return 0;
+}
