@@ -1,0 +1,26 @@
+//Head File
+#include <stdio.h>
+#include <string.h> //为了之后使用strlen（）函数
+#define DENSITY 64.2  //定义人体密度（单位：磅/立方英尺）
+
+//Main Function
+int main(int argc, const char * argv[])
+{
+    float weight,volume;
+    unsigned long size,letters;  //使用unsigned long的原因是担心使用unsigned int会丢失部分精度
+    char name[40];  //name 是一个可容纳40个字符的数组
+   
+    printf("Hi!What's your first name?\n");
+    scanf("%s",name);
+    getchar();
+    printf("%s,what's your weight in pound?",name);
+    scanf("%f",&weight);
+    size = sizeof name;
+    letters = strlen(name);
+    volume = weight/DENSITY;
+    printf("Well,%s,your volume is %2.2f cubic feet.\n",name,volume);
+    printf("Also,your first name has %d letters,\n",letters);
+    printf("And we have %d bytes to store it.\n",size);
+    
+    return 0;
+}
