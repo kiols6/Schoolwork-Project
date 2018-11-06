@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include <conio.h>
+
+void main(){
+	int a[2][3]={1,2,3,4,5,6};
+	int b[3][2],i,j;
+	for(i=0;i<=1;i++)//控制行数位
+	{
+		if(i==1)printf("\n");
+		for(j=0;j<=2;j++)//控制列数位
+		{   
+			printf("%4d",a[i][j]);
+			b[j][i]=a[i][j]; //*转置行列式应当在最内循环中被赋值
+		}
+	}
+	printf("\n\n");
+	for(i=0;i<=2;i++)//控制行数位
+	{
+		for(j=0;j<=1;j++)//控制列数位
+			printf("%4d",b[i][j]);
+			printf("\n");
+	}
+	_getch();
+}
