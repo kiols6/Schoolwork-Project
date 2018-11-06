@@ -1,0 +1,14 @@
+#include "stdafx.h"
+#include <conio.h>
+//Fibonacci数列公式：已知: a1=a2=1	an=an-1+an-2  (即:1,1,2,3,5,8,13)
+
+void main(){
+	int i;
+	int f[20]={1,1}; //声明一个20字符的数组
+
+	for(i=2;i<=20;i++){
+		f[i]=f[i-1]+f[i-2]; //表示公式，并向数组添加新的元素
+	}
+	printf("%d",f[19]);
+	_getch();
+}
