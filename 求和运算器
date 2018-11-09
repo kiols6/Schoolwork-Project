@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include <conio.h>
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int num=0;
+	int sum=0L; //初始化sum
+	printf("Please enter a number ");
+	printf("(q to quit:)");
+	while(scanf("%ld",&num))//scanf("%ld",&num); 应当键入数字，如果键入字母，scanf 语句执行失败，num当中未取得输入值，scanf函数返回0。
+		{
+		 printf("Please enter the next number ");
+		 printf("(q to quit:)");
+
+		 sum=sum+num;
+		}
+	
+	printf("sum=%d",sum);
+	_getch();
+	return 0;
+}
