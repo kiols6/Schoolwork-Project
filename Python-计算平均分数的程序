@@ -1,0 +1,29 @@
+a=eval(input("请输入一个成绩："))
+bool=1
+x=[]
+x.append(a) #将第一次输入的成绩添加至列表a
+
+#循环输入
+while(bool):
+    c=input("继续输入吗？（yes/no）")
+    if c=='no':
+        bool=0
+    elif c=='yes':
+        while True:
+            try:
+                str_d=input("请输入一个成绩：")
+                d=float(str_d)
+                x.append(d)
+                break
+            except:
+                print("不是一个合法成绩")
+    else:
+        print("只能输入yes or no!") #输入非法
+    
+
+#计算平均值
+e=len(x)
+s=0
+for i in x:
+    s=s+i
+print("平均分为%.1f"%(s/e))
