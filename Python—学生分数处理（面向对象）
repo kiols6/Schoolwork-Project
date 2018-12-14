@@ -1,0 +1,43 @@
+#Define Student class
+class Student():
+    list_P = []
+    list_M = []
+    list_E = []
+    def __init__(self,num,name,Pscore,Mscore,Escore):
+        self.num=int(num)
+        self.name=name
+        self.Pscore=float(Pscore)
+        self.list_P.append(Pscore)
+        self.Mscore = float(Mscore)
+        self.list_M.append(Mscore)
+        self.Escore = float(Escore)
+        self.list_E.append(Escore)
+    def getNum(self):
+        return int(self.num)
+    def getName(self):
+        return str(self.name)
+    def averagenum(self):
+        psum = 0
+        for i in range(len(self.list_P)):
+            psum += self.list_P[i]
+        print('{}{:.2f}'.format('The average of Programming score is ',psum / len(self.list_P)))
+
+        msum = 0
+        for i in range(len(self.list_M)):
+            msum += self.list_M[i]
+        print('{}{:.2f}'.format('The average of Math score is ', msum / len(self.list_M)))
+
+        esum = 0
+        for i in range(len(self.list_E)):
+            esum += self.list_E[i]
+        print('{}{:.2f}'.format('The average of English score is ', esum / len(self.list_E)))
+
+#Test
+def main():
+    zm=Student(1,'ZhangMing',89,78,69)
+    lh=Student(2,'LiHao',87,77,59)
+    xm=Student(3,'XiaoMing',67,96,89)
+    xm.averagenum()
+
+if __name__ == '__main__':
+    main()
