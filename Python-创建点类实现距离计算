@@ -1,0 +1,29 @@
+import math
+#Define Point class
+class Point():
+    def __init__(self,x,y):
+        self.x = float(x)
+        self.y = float(y)
+
+    def getx(self):
+        return self.x
+
+    def gety(self):
+        return self.y
+#Define Distance class
+class GetDistance():
+        def __init__(self,p1,p2):
+            self.x = p1.getx() - p2.getx()
+            self.y = p1.gety() - p2.gety()
+            self.distance = math.sqrt((self.x) ** 2 + (self.y) ** 2 )
+        def getDistance(self):
+            print("两点间距离为：",self.distance)
+#Test
+def main():
+    p1=Point(3,4)
+    p2=Point(0,0)
+    d=GetDistance(p1,p2)
+    d.getDistance()
+if __name__ == '__main__':
+    main()
+
