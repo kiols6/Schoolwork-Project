@@ -1,0 +1,28 @@
+num=int(input())
+print("数字金字塔显示如下：")
+level =1
+while level<=num:
+    kk = 1 #每层长度计数初始值
+    t=level
+    length=2*t-1
+    while kk<=length:
+        if kk==1:
+            if kk == length:
+                print(format(t,str(2*num-1)),"\n")# ,end="" 在Python 3.x中用于关闭默认换行输出的功能
+                break
+            else:
+                print(format(t,str(2*num+1-2*level)),'',end="")
+                t-=1
+
+        else:                           #从第一层往下 做else
+            if kk==length:              #每一行最后做，先做换行
+                print(t,"\n")
+                break
+            elif kk<=length/2:          #第一步做，先做左边
+                print(t,"",end="")
+                t-=1
+            else:                       #第二步做，先做右边边
+                print(t,"",end="")
+                t+=1
+        kk+=1
+    level+=1
